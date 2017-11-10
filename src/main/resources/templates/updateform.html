@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+    <title>Pet Form</title>
+
+</head>
+<body>
+<h1> Lost Pest, Inc</h1>
+<br />
+<div class="container">
+    <div th:fragment="navbar" class="navbar  navbar-light bg-faded">
+        <div class="navbar-brand">
+
+            <a class="navbar brand" href="/add">Add a New Pet</a>
+            <div class="nav-collapse collapse">
+
+            </div>
+
+        </div>
+    </div>
+
+    <form action="#" th:action="@{/process}" th:object="${pet}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <p class="col-md-2"></p><label class="col-md-4">Pet Name:</label> <input type="text" th:field="*{name}" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Pet Age: </label><input type="number" th:field="*{age}" />
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Pet Type :</label> <input type="text" th:field="*{type}" />
+        <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Pet Breed (if applicable):</label> <input type="text" th:field="*{breed}" />
+        <span th:if="${#fields.hasErrors('breed')}" th:errors="*{breed}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Pet Color </label> <input type="text" th:field="*{color}" />
+        <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Special Features (if any):</label> <input type="text" th:field="*{specialFeatures}" />
+        <span th:if="${#fields.hasErrors('specialFeatures')}" th:errors="*{specialFeatures}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Phone Number:</label> <input type="text" th:field="*{phoneNumber}" />
+        <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"> </span> <br /><br />
+
+        <p class="col-md-2"></p><label class="col-md-4">Current Status:</label> <input type="text" th:field="*{currentStatus}" />
+        <span th:if="${#fields.hasErrors('currentStatus')}" th:errors="*{currentStatus}"> </span> <br />
+
+        <p class="col-md-6"></p><input type="submit" value="Submit" />
+
+    </form>
+    <div class="vl"></div>
+</div>
+
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+</body>
+</html>

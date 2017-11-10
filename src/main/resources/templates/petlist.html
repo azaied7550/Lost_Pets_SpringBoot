@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <title>Pet List</title>
+</head>
+<body>
+<h1> Lost Pest, Inc</h1>
+<br />
+<div class="container">
+    <div th:fragment="navbar" class="navbar  navbar-light bg-faded">
+        <div class="navbar-brand">
+
+            <a class="navbar brand" href="/add">Add a New Pet</a>
+            <div class="nav-collapse collapse">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+<table>
+    <tr>
+        <th>Pet Name </th>
+        <th>Pet Age</th>
+        <th>Pet Type</th>
+        <th>Pet Breed</th>
+        <th>Pet Color</th>
+        <th>Pet Special Features</th>
+        <th>Phone Number </th>
+        <th>Current Status</th>
+    </tr>
+
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.name}"></td>
+        <td th:text="${pet.age}"></td>
+        <td th:text="${pet.type}"></td>
+        <td th:text="${pet.breed}"></td>
+        <td th:text="${pet.color}"></td>
+        <td th:text="${pet.specialFeatures}"></td>
+        <td th:text="${pet.phoneNumber}"></td>
+
+        <td th:text="${pet.currentStatus}"></td>
+
+        <td>
+            <a th:href="@{/update/{id} (id=${pet.id})}"> Update  | </a>
+            <a th:href="@{/detail/{id} (id=${pet.id})}">  Details|</a>
+            <a th:href="@{/delete/{id} (id=${pet.id})}"> Delete </a>
+        </td>
+    </tr>
+</table>
+    <div class="vl"></div>
+</div>
+
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+</body>
+</html>
