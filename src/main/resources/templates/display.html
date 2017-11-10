@@ -35,24 +35,25 @@
     <a href="/add">Add a New Pet</a>
     <hr />
 
-    <label>Pet Name:</label> <span th:text="${pet.name}"></span> <br />
+    <label class="col-md-3">Pet Name:</label> <p class="col-md-2"></p> <span th:text="${pet.name}"></span> <br />
 
-    <label>Pet Age:</label> <span th:text="${pet.age}"></span> <br />
+    <label class="col-md-3">Pet Age:</label> <p class="col-md-2"></p><span th:text="${pet.age}"></span> <br />
 
-    <label>Pet Type :</label> <span th:text="${pet.type}"></span> <br />
+    <label class="col-md-3">Pet Type :</label> <p class="col-md-2"></p><span th:text="${pet.type}"></span> <br />
 
-    <label>Pet Breed (if applicable):</label><span th:text="${pet.breed}"></span><br />
+    <label class="col-md-3">Pet Breed (if applicable):</label><p class="col-md-2"></p><span th:text="${pet.breed}"></span><br />
 
-    <label>Pet Color :</label> <span th:text="${pet.color}"></span> <br />
+    <label class="col-md-3">Pet Color :</label><p class="col-md-2"></p><span th:text="${pet.color}"></span> <br />
 
-    <label>Special Features (if any):</label><span th:text="${pet.specialFeatures}"></span> <br />
+    <label class="col-md-3">Special Features (if any):</label><p class="col-md-2"></p><span th:text="${pet.specialFeatures}"></span> <br />
 
-    <label>Current Status:</label> <span th:text="${pet.currentStatus}"></span> <br />
+    <label class="col-md-3">Current Status:</label> <p class="col-md-2"></p><span th:text="${pet.currentStatus}"></span> <br />
     <br />
     <hr />
 
 
     <a th:href="@{/delete/{id} (id=${pet.id})}"> Delete this Pet</a><br />
+    <a th:href="@{/update/{id} (id=${pet.id})}"> Update this Pet  </a>
 
     <br />
     <hr />
